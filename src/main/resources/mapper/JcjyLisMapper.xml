@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hisdemo.mapper.JcjyLisMapper">
+
+    <resultMap id="BaseResultMap" type="hisdemo.domain.JcjyLis">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="zyId" column="zy_id" jdbcType="INTEGER"/>
+            <result property="lisName" column="lis_name" jdbcType="VARCHAR"/>
+            <result property="detailName" column="detail_name" jdbcType="VARCHAR"/>
+            <result property="lisResult" column="lis_result" jdbcType="DOUBLE"/>
+            <result property="laboratoryResultUilt" column="laboratory_result_uilt" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,zy_id,lis_name,
+        detail_name,lis_result,laboratory_result_uilt
+    </sql>
+</mapper>

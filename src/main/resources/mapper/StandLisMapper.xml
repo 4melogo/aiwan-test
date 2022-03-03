@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hisdemo.mapper.StandLisMapper">
+
+    <resultMap id="BaseResultMap" type="hisdemo.domain.StandLis">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="hisId" column="his_id" jdbcType="INTEGER"/>
+            <result property="laboratoryName" column="laboratory_name" jdbcType="VARCHAR"/>
+            <result property="detailName" column="detail_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,his_id,laboratory_name,
+        detail_name
+    </sql>
+</mapper>

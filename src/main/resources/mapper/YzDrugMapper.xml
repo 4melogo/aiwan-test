@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hisdemo.mapper.YzDrugMapper">
+
+    <resultMap id="BaseResultMap" type="hisdemo.domain.YzDrug">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="zyId" column="zy_id" jdbcType="INTEGER"/>
+            <result property="adviceType" column="advice_type" jdbcType="VARCHAR"/>
+            <result property="drugName" column="drug_name" jdbcType="VARCHAR"/>
+            <result property="singleDosage" column="single_dosage" jdbcType="INTEGER"/>
+            <result property="singleDosageUtil" column="single_dosage_util" jdbcType="VARCHAR"/>
+            <result property="administrationRoute" column="administration_route" jdbcType="VARCHAR"/>
+            <result property="medicationFrequency" column="medication_frequency" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,zy_id,advice_type,
+        drug_name,single_dosage,single_dosage_util,
+        administration_route,medication_frequency
+    </sql>
+</mapper>

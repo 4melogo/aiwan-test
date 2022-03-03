@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hisdemo.mapper.PatientAdmissionRecordMapper">
+
+    <resultMap id="BaseResultMap" type="hisdemo.domain.PatientAdmissionRecord">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="zyId" column="zy_id" jdbcType="INTEGER"/>
+            <result property="department" column="department" jdbcType="VARCHAR"/>
+            <result property="patientName" column="patient_name" jdbcType="VARCHAR"/>
+            <result property="patientBirth" column="patient_birth" jdbcType="DATE"/>
+            <result property="patientAge" column="patient_age" jdbcType="VARCHAR"/>
+            <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+            <result property="patientSex" column="patient_sex" jdbcType="VARCHAR"/>
+            <result property="patientNationality" column="patient_nationality" jdbcType="VARCHAR"/>
+            <result property="bacode" column="bacode" jdbcType="VARCHAR"/>
+            <result property="patientIndate" column="patient_indate" jdbcType="TIMESTAMP"/>
+            <result property="patientIndepartment" column="patient_indepartment" jdbcType="VARCHAR"/>
+            <result property="patientOutdate" column="patient_outdate" jdbcType="TIMESTAMP"/>
+            <result property="patientOutdepartment" column="patient_outdepartment" jdbcType="VARCHAR"/>
+            <result property="patientConsultationDate" column="patient_consultation_date" jdbcType="TIMESTAMP"/>
+            <result property="patientConsultationDepartment" column="patient_consultation_department" jdbcType="VARCHAR"/>
+            <result property="complaint" column="complaint" jdbcType="VARCHAR"/>
+            <result property="presentHistroy" column="present_histroy" jdbcType="VARCHAR"/>
+            <result property="pastHistory" column="past_history" jdbcType="VARCHAR"/>
+            <result property="familyHistory" column="family_history" jdbcType="VARCHAR"/>
+            <result property="allergicHistory" column="allergic_history" jdbcType="VARCHAR"/>
+            <result property="infectiousHistory" column="Infectious_history" jdbcType="VARCHAR"/>
+            <result property="personalLifeHistory" column="personal_life_history" jdbcType="VARCHAR"/>
+            <result property="temperature" column="temperature" jdbcType="INTEGER"/>
+            <result property="pulse" column="pulse" jdbcType="INTEGER"/>
+            <result property="breathing" column="breathing" jdbcType="INTEGER"/>
+            <result property="lowPressure" column="low_pressure" jdbcType="INTEGER"/>
+            <result property="highPressure" column="high_pressure" jdbcType="INTEGER"/>
+            <result property="specialtySituation" column="specialty_situation" jdbcType="VARCHAR"/>
+            <result property="supplementaryExamination" column="supplementary_examination" jdbcType="VARCHAR"/>
+            <result property="admissionDiagnosis" column="admission_diagnosis" jdbcType="VARCHAR"/>
+            <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,zy_id,department,
+        patient_name,patient_birth,patient_age,
+        created_time,patient_sex,patient_nationality,
+        bacode,patient_indate,patient_indepartment,
+        patient_outdate,patient_outdepartment,patient_consultation_date,
+        patient_consultation_department,complaint,present_histroy,
+        past_history,family_history,allergic_history,
+        Infectious_history,personal_life_history,temperature,
+        pulse,breathing,low_pressure,
+        high_pressure,specialty_situation,supplementary_examination,
+        admission_diagnosis,remarks
+    </sql>
+</mapper>

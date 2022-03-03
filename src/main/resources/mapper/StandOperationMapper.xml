@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hisdemo.mapper.StandOperationMapper">
+
+    <resultMap id="BaseResultMap" type="hisdemo.domain.StandOperation">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="hisId" column="his_id" jdbcType="INTEGER"/>
+            <result property="operationName" column="operation_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,his_id,operation_name
+    </sql>
+</mapper>

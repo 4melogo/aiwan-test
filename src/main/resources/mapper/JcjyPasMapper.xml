@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hisdemo.mapper.JcjyPasMapper">
+
+    <resultMap id="BaseResultMap" type="hisdemo.domain.JcjyPas">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="zyId" column="zy_id" jdbcType="INTEGER"/>
+            <result property="pasName" column="pas_name" jdbcType="VARCHAR"/>
+            <result property="pasResult" column="pas_result" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,zy_id,pas_name,
+        pas_result
+    </sql>
+</mapper>
