@@ -10,39 +10,39 @@ import java.util.List;
  */
 public interface PatientAdmissionRecordMapper extends BaseMapper<PatientAdmissionRecord> {
     /**
-     * 查询hisdemo
+     * 查询患者列表
      *
      * @param id hisdemo主键
-     * @return hisdemo
+     * @return 患者
      */
     public PatientAdmissionRecord selectPatientAdmissionRecordById(Long id);
 
     /**
-     * 查询hisdemo列表
+     * 查询患者列表
      *
-     * @param patientAdmissionRecord hisdemo
-     * @return hisdemo集合
+     * @param patientAdmissionRecord
+     * @return 患者集合
      */
     public List<PatientAdmissionRecord> selectPatientAdmissionRecordList(PatientAdmissionRecord patientAdmissionRecord);
 
     /**
-     * 新增hisdemo
+     * 新增患者
      *
-     * @param patientAdmissionRecord hisdemo
+     * @param patientAdmissionRecord
      * @return 结果
      */
     public int insertPatientAdmissionRecord(PatientAdmissionRecord patientAdmissionRecord);
 
     /**
-     * 修改hisdemo
+     * 修改患者
      *
-     * @param patientAdmissionRecord hisdemo
+     * @param patientAdmissionRecord
      * @return 结果
      */
     public int updatePatientAdmissionRecord(PatientAdmissionRecord patientAdmissionRecord);
 
     /**
-     * 删除hisdemo
+     * 删除患者
      *
      * @param id hisdemo主键
      * @return 结果
@@ -50,7 +50,7 @@ public interface PatientAdmissionRecordMapper extends BaseMapper<PatientAdmissio
     public int deletePatientAdmissionRecordById(Long id);
 
     /**
-     * 批量删除hisdemo
+     * 批量删除患者
      *
      * @param ids 需要删除的数据主键集合
      * @return 结果

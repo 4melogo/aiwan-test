@@ -52,6 +52,17 @@
             <artifactId>mybatis-plus-extension</artifactId>
             <version>3.5.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.linkdoc</groupId>
+            <artifactId>lkai-system-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>
