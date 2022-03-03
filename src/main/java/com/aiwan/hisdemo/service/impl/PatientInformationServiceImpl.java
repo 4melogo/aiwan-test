@@ -1,9 +1,10 @@
 package com.aiwan.hisdemo.service.impl;
 
+import com.aiwan.hisdemo.mapper.PatientInformationMapper;
+import com.aiwan.hisdemo.po.PatientInformation;
+import com.aiwan.hisdemo.service.PatientInformationService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import hisdemo.domain.PatientInformation;
-import hisdemo.service.PatientInformationService;
-import hisdemo.mapper.PatientInformationMapper;
+
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PatientInformationServiceImpl extends ServiceImpl<PatientInformationMapper, PatientInformation>
-    implements PatientInformationService{
+    implements PatientInformationService {
 
 }
 

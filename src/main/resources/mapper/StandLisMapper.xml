@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="hisdemo.mapper.StandLisMapper">
+<mapper namespace="com.aiwan.hisdemo.mapper.StandLisMapper">
 
-    <resultMap id="BaseResultMap" type="hisdemo.domain.StandLis">
+    <resultMap id="BaseResultMap" type="com.aiwan.hisdemo.po.StandLis">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <result property="hisId" column="his_id" jdbcType="INTEGER"/>
             <result property="laboratoryName" column="laboratory_name" jdbcType="VARCHAR"/>

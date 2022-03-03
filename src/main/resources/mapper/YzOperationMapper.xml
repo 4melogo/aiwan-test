@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="hisdemo.mapper.YzOperationMapper">
+<mapper namespace="com.aiwan.hisdemo.mapper.YzOperationMapper">
 
-    <resultMap id="BaseResultMap" type="hisdemo.domain.YzOperation">
+    <resultMap id="BaseResultMap" type="com.aiwan.hisdemo.po.YzOperation">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <result property="zyId" column="zy_id" jdbcType="INTEGER"/>
             <result property="operationName" column="operation_name" jdbcType="VARCHAR"/>

@@ -1,9 +1,9 @@
 package com.aiwan.hisdemo.service.impl;
 
+import com.aiwan.hisdemo.mapper.YzPasMapper;
+import com.aiwan.hisdemo.po.YzPas;
+import com.aiwan.hisdemo.service.YzPasService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import hisdemo.domain.YzPas;
-import hisdemo.service.YzPasService;
-import hisdemo.mapper.YzPasMapper;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class YzPasServiceImpl extends ServiceImpl<YzPasMapper, YzPas>
-    implements YzPasService{
+    implements YzPasService {
 
 }
 

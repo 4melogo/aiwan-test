@@ -1,9 +1,10 @@
 package com.aiwan.hisdemo.service.impl;
 
+import com.aiwan.hisdemo.mapper.PatientAdmissionRecordMapper;
+import com.aiwan.hisdemo.po.PatientAdmissionRecord;
+import com.aiwan.hisdemo.service.PatientAdmissionRecordService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import hisdemo.domain.PatientAdmissionRecord;
-import hisdemo.service.PatientAdmissionRecordService;
-import hisdemo.mapper.PatientAdmissionRecordMapper;
+
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PatientAdmissionRecordServiceImpl extends ServiceImpl<PatientAdmissionRecordMapper, PatientAdmissionRecord>
-    implements PatientAdmissionRecordService{
+    implements PatientAdmissionRecordService {
 
 }
 

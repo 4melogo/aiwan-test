@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="hisdemo.mapper.PatientAdmissionRecordMapper">
+<mapper namespace="com.aiwan.hisdemo.mapper.PatientAdmissionRecordMapper">
 
-    <resultMap id="BaseResultMap" type="hisdemo.domain.PatientAdmissionRecord">
+    <resultMap id="BaseResultMap" type="com.aiwan.hisdemo.po.PatientAdmissionRecord">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <result property="zyId" column="zy_id" jdbcType="INTEGER"/>
             <result property="department" column="department" jdbcType="VARCHAR"/>
@@ -52,4 +52,143 @@
         high_pressure,specialty_situation,supplementary_examination,
         admission_diagnosis,remarks
     </sql>
+
+    <select id="selectPatientAdmissionRecordList" parameterType="com.aiwan.hisdemo.po.PatientAdmissionRecord" resultMap="BaseResultMap">
+        <include refid="Base_Column_List"/>
+        <where>
+            <if test="id != null "> and id = #{id}</if>
+            <if test="zyId != null "> and zy_id = #{zyId}</if>
+            <if test="department != null  and department != ''"> and department like concat('%', #{department}, '%')</if>
+            <if test="patientName != null  and patientName != ''"> and patient_name like concat('%', #{patientName}, '%')</if>
+            <if test="params.beginCreatedTime != null and params.beginCreatedTime != '' and params.endCreatedTime != null and params.endCreatedTime != ''"> and created_time between #{params.beginCreatedTime} and #{params.endCreatedTime}</if>
+            <if test="patientSex != null  and patientSex != ''"> and patient_sex = #{patientSex}</if>
+            <if test="admissionDiagnosis != null  and admissionDiagnosis != ''"> and admission_diagnosis like concat('%', #{admissionDiagnosis}, '%')</if>
+        </where>
+    </select>
+
+    <select id="selectPatientAdmissionRecordById" parameterType="Long" resultMap="BaseResultMap">
+        <include refid="Base_Column_List"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertPatientAdmissionRecord" parameterType="com.aiwan.hisdemo.po.PatientAdmissionRecord">
+        insert into patient_admission_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="zyId != null">zy_id,</if>
+            <if test="department != null">department,</if>
+            <if test="patientName != null">patient_name,</if>
+            <if test="patientBirth != null">patient_birth,</if>
+            <if test="patientAge != null">patient_age,</if>
+            <if test="createdTime != null">created_time,</if>
+            <if test="patientSex != null">patient_sex,</if>
+            <if test="patientNationality != null">patient_nationality,</if>
+            <if test="bacode != null">bacode,</if>
+            <if test="patientIndate != null">patient_indate,</if>
+            <if test="patientIndepartment != null">patient_indepartment,</if>
+            <if test="patientOutdate != null">patient_outdate,</if>
+            <if test="patientOutdepartment != null">patient_outdepartment,</if>
+            <if test="patientConsultationDate != null">patient_consultation_date,</if>
+            <if test="patientConsultationDepartment != null">patient_consultation_department,</if>
+            <if test="complaint != null">complaint,</if>
+            <if test="presentHistroy != null">present_histroy,</if>
+            <if test="pastHistory != null">past_history,</if>
+            <if test="familyHistory != null">family_history,</if>
+            <if test="allergicHistory != null">allergic_history,</if>
+            <if test="infectiousHistory != null">Infectious_history,</if>
+            <if test="personalLifeHistory != null">personal_life_history,</if>
+            <if test="temperature != null">temperature,</if>
+            <if test="pulse != null">pulse,</if>
+            <if test="breathing != null">breathing,</if>
+            <if test="lowPressure != null">low_pressure,</if>
+            <if test="highPressure != null">high_pressure,</if>
+            <if test="specialtySituation != null">specialty_situation,</if>
+            <if test="supplementaryExamination != null">supplementary_examination,</if>
+            <if test="admissionDiagnosis != null">admission_diagnosis,</if>
+            <if test="remarks != null">remarks,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="zyId != null">#{zyId},</if>
+            <if test="department != null">#{department},</if>
+            <if test="patientName != null">#{patientName},</if>
+            <if test="patientBirth != null">#{patientBirth},</if>
+            <if test="patientAge != null">#{patientAge},</if>
+            <if test="createdTime != null">#{createdTime},</if>
+            <if test="patientSex != null">#{patientSex},</if>
+            <if test="patientNationality != null">#{patientNationality},</if>
+            <if test="bacode != null">#{bacode},</if>
+            <if test="patientIndate != null">#{patientIndate},</if>
+            <if test="patientIndepartment != null">#{patientIndepartment},</if>
+            <if test="patientOutdate != null">#{patientOutdate},</if>
+            <if test="patientOutdepartment != null">#{patientOutdepartment},</if>
+            <if test="patientConsultationDate != null">#{patientConsultationDate},</if>
+            <if test="patientConsultationDepartment != null">#{patientConsultationDepartment},</if>
+            <if test="complaint != null">#{complaint},</if>
+            <if test="presentHistroy != null">#{presentHistroy},</if>
+            <if test="pastHistory != null">#{pastHistory},</if>
+            <if test="familyHistory != null">#{familyHistory},</if>
+            <if test="allergicHistory != null">#{allergicHistory},</if>
+            <if test="infectiousHistory != null">#{infectiousHistory},</if>
+            <if test="personalLifeHistory != null">#{personalLifeHistory},</if>
+            <if test="temperature != null">#{temperature},</if>
+            <if test="pulse != null">#{pulse},</if>
+            <if test="breathing != null">#{breathing},</if>
+            <if test="lowPressure != null">#{lowPressure},</if>
+            <if test="highPressure != null">#{highPressure},</if>
+            <if test="specialtySituation != null">#{specialtySituation},</if>
+            <if test="supplementaryExamination != null">#{supplementaryExamination},</if>
+            <if test="admissionDiagnosis != null">#{admissionDiagnosis},</if>
+            <if test="remarks != null">#{remarks},</if>
+        </trim>
+    </insert>
+
+    <update id="updatePatientAdmissionRecord" parameterType="com.aiwan.hisdemo.po.PatientAdmissionRecord">
+        update patient_admission_record
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="zyId != null">zy_id = #{zyId},</if>
+            <if test="department != null">department = #{department},</if>
+            <if test="patientName != null">patient_name = #{patientName},</if>
+            <if test="patientBirth != null">patient_birth = #{patientBirth},</if>
+            <if test="patientAge != null">patient_age = #{patientAge},</if>
+            <if test="createdTime != null">created_time = #{createdTime},</if>
+            <if test="patientSex != null">patient_sex = #{patientSex},</if>
+            <if test="patientNationality != null">patient_nationality = #{patientNationality},</if>
+            <if test="bacode != null">bacode = #{bacode},</if>
+            <if test="patientIndate != null">patient_indate = #{patientIndate},</if>
+            <if test="patientIndepartment != null">patient_indepartment = #{patientIndepartment},</if>
+            <if test="patientOutdate != null">patient_outdate = #{patientOutdate},</if>
+            <if test="patientOutdepartment != null">patient_outdepartment = #{patientOutdepartment},</if>
+            <if test="patientConsultationDate != null">patient_consultation_date = #{patientConsultationDate},</if>
+            <if test="patientConsultationDepartment != null">patient_consultation_department = #{patientConsultationDepartment},</if>
+            <if test="complaint != null">complaint = #{complaint},</if>
+            <if test="presentHistroy != null">present_histroy = #{presentHistroy},</if>
+            <if test="pastHistory != null">past_history = #{pastHistory},</if>
+            <if test="familyHistory != null">family_history = #{familyHistory},</if>
+            <if test="allergicHistory != null">allergic_history = #{allergicHistory},</if>
+            <if test="infectiousHistory != null">Infectious_history = #{infectiousHistory},</if>
+            <if test="personalLifeHistory != null">personal_life_history = #{personalLifeHistory},</if>
+            <if test="temperature != null">temperature = #{temperature},</if>
+            <if test="pulse != null">pulse = #{pulse},</if>
+            <if test="breathing != null">breathing = #{breathing},</if>
+            <if test="lowPressure != null">low_pressure = #{lowPressure},</if>
+            <if test="highPressure != null">high_pressure = #{highPressure},</if>
+            <if test="specialtySituation != null">specialty_situation = #{specialtySituation},</if>
+            <if test="supplementaryExamination != null">supplementary_examination = #{supplementaryExamination},</if>
+            <if test="admissionDiagnosis != null">admission_diagnosis = #{admissionDiagnosis},</if>
+            <if test="remarks != null">remarks = #{remarks},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deletePatientAdmissionRecordById" parameterType="Long">
+        delete from patient_admission_record where id = #{id}
+    </delete>
+
+    <delete id="deletePatientAdmissionRecordByIds" parameterType="String">
+        delete from patient_admission_record where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>

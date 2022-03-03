@@ -1,9 +1,10 @@
 package com.aiwan.hisdemo.service.impl;
 
+import com.aiwan.hisdemo.mapper.StandDrugMapper;
+import com.aiwan.hisdemo.po.StandDrug;
+import com.aiwan.hisdemo.service.StandDrugService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import hisdemo.domain.StandDrug;
-import hisdemo.service.StandDrugService;
-import hisdemo.mapper.StandDrugMapper;
+
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class StandDrugServiceImpl extends ServiceImpl<StandDrugMapper, StandDrug>
-    implements StandDrugService{
+    implements StandDrugService {
 
 }
 
